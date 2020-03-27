@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+
+html {
+    background-color: #111;
+    font-family: 'Archivo Black', sans-serif;
+    color: white;
+    transition: 1s;
+}
+
+/* Toggled class is used on html to provide access to toggle state to all HTML elements */
+html.toggled {
+    background-color: white;
+    color: #222;
+}
+
+/* Center the body content */
+.container {
+    width: max-content;
+    position: absolute;
+    left: 50vw;
+    transform: translateX(-50%);
+    margin-top: 100px;
+}
+
+/* H2 element used for the "make the switch to" text */
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.1em;
+    display: inline;
+}
+
+/* h1 used for the word SWITCH itself */
+h1 {
+    letter-spacing: 0.1em;
+    font-size: 200px;
+    margin: 0px;
+    display: inline-block;
+}
+
+h3 {
+    text-align: right;
+    font-size: 90%;
+}
+
+/* i tag used for the swappable word as a flexible inline element */
+h3 i {
+    font-style: normal;
+    display: inline-block;
+    height: 1em;
+}
+
+/* Use the span just like the letter I */
+span {
+    display: inline-block;
+    margin: 0px -60px;
+}
+
+/* The background of the switch, uses a transparent inner and outer shadow that can be used regardless of the changing background color */
+span>div {
+    display: inline-block;
+    width: 70px;   
+    height: 160px;
+    position: relative;
+    top: 15px;
+    background-color: white;
+    border-radius: 35px;
+    box-shadow: inset 0 0 20px #00000044, 0 0 10px #00000099;
+}
+
+/* Swap the background color on toggle */
+.toggled span>div {
+    background-color: #222;
+}
+
+/* Remove the rendered fontawesome icons from the flow of the rest of the page */
+svg {
+    display: block;
+    position: absolute;
+}
+
+/* Set the fontawesome icon size */
+div {
+    font-size: 40px;
+}
+
+/* Align the sun and moon icons respectively */
+#sun, #moon {
+    left: 15px;
+    opacity: 30%
+}
+
+#sun {
+    top: 25px;
+    color: white;
+}
+
+#moon {
+    color: #222;
+    bottom: 25px;
+}
+
+/* The toggle button itself, also uses a slight radial gradient so the style can be changed with just background color (background image can't be transitioned, only scaled) */
+span div div {
+    position: absolute;
+    background-color: #222;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    left: 5px;
+    top: 5px;
+    box-shadow: 0 5px 15px black;
+    background-image: radial-gradient( transparent 40%, #00000033);
+    cursor: pointer;
+    transition: 1s;
+}
+
+/* Swap the color and position on toggle for the toggle button */
+.toggled span div div {
+    top: 95px;
+    background-color: white;
+}
+
+/* Keep the hashtags at the bottom of the page */
+.hashtag {
+    position: fixed;
+    left: 50px;
+    bottom: 50px;
+    transition: 1s;
+}
+
+/* Alternate colors and scales based on toggle state
+Swapping x-scales and setting the transform origins to opposite sides gives a "rotating cube" style effect, if both items are transitioned with the same easing */
+p.hashtag.dark {
+    transform: scaleX(1);
+    transform-origin: 100% 0%;
+    color: white;
+}
+
+.toggled p.hashtag.dark {
+    transform: scaleX(0)
+}
+
+p.hashtag.light {
+    transform: scaleX(0);
+    transform-origin: 0% 0%;
+    color: #222;
+}
+
+.toggled p.hashtag.light {
+    transform: scaleX(1)
+}

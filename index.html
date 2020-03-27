@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Big Switch</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Fontawesome used for the sun and moon icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="header">MAKE THE</h2><br>
+        <h1>SW
+            <!-- Inline span that functions as both the I and the switch itself -->
+        <span id="switch">
+            <div id="bg">
+                <!-- Using fontawesome icons -->
+                <i class="fas fa-sun" id="sun"></i>
+                <i class="fas fa-moon" id="moon"></i>
+                <!-- The toggle slider itself -->
+                <div id="slider"></div>
+            </div>
+        </span> 
+        TCH</h1>
+        <!-- i tag is repurposed just as another inline element (more semantic than heavily styling a div or similar) -->
+        <h3>TO <i class="mode night">DAY</i> MODE</h3>
+    </div>
+    <p class="hashtag light">#teamLightMode</p>
+    <p class="hashtag dark">#teamDarkMode</p>
+</body>
+<!-- Jquery link -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Custom script link -->
+<script src="main.js"></script>
+</html>
